@@ -36,6 +36,7 @@ def extract(list_filenames, job_id):
     for index, audiofile in enumerate(list_filenames):        
         # Path to audiofile:
         #       sounds/<FOLDER NUMBER>/<FS SOUND ID>_<FS USER ID>.<EXTENSION>
+        
         filename = audiofile.split("/")[-1]
         fs_id = filename.split("_")[0]
 
@@ -46,13 +47,19 @@ def extract(list_filenames, job_id):
         cmd = CMD_DIR + COMMAND.format(audiofile, tmp.name)
         try:
             # call Essentia's MusicExtractor
-            process = subprocess.Popen(cmd.split(), stdout=DEVNULL, stderr=DEVNULL)
-            process.communicate()
-            # load computed descriptors
-            data = json.load(tmp)
-            output_dict[fs_id]["ebur128"] = data["lowlevel"]["loudness_ebu128"]["integrated"]
-            output_dict[fs_id]["replayGain"] = data["metadata"]["audio_properties"]["replay_gain"]
+            # process = subprocess.Popen(cmd.split(), stdout=DEVNULL, stderr=DEVNULL)
+            # process.communicate()
+            # # load computed descriptors
+            # data = json.load(tmp)
+            # output_dict[fs_id]["ebur128"] = data["lowlevel"]["loudness_ebu128"]["integrated"]
+            # output_dict[fs_id]["replayGain"] = data["metadata"]["audio_properties"]["replay_gain"]
             #log("{} analyzed succesfully".format(filename))
+            if os.path.exists(audiofile):
+                output_dict[fs_id]["ebur128"] = None
+                output_dict[fs_id]["replayGain"] = None
+            else:
+                log("File {} doesn't exist".format(audiofile))
+                raise Exception
         except Exception as e:
             log("A problem occurred while analyzing {}".format(filename))
             log(e)
