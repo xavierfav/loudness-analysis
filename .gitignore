@@ -1,1 +1,4 @@
 analysis/*
+*.pyc
+out/*
+!out/.keep
