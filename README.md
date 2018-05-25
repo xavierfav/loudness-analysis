@@ -11,5 +11,7 @@ We provided some sample sounds in the `sounds/0/` folder.
 
 ## Notes
 For now, the binary MusicExtractor (`essentia_streaming_extractor_music`) is not cross-platform, and is a non-standard modification of the original algorithm.
+
 You can find the source code of this modified version here: https://github.com/lorenzo-romanelli/essentia/tree/music_extractor_nofail
+
 To compile it, follow the instructions on the Essentia website (http://essentia.upf.edu/documentation/installing.html).
