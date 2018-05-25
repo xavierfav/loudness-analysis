@@ -23,7 +23,7 @@ def fs_id_to_filename(fs_id):
 
 if __name__ == '__main__':
     fs_id_to_process = json.load(open(FS_IDS, 'rb'))
-    num_files_per_job = int(math.ceil(len(fs_id_to_process)/NUM_JOBS))
+    num_files_per_job = int(math.ceil(len(fs_id_to_process)/float(NUM_JOBS)))
 
     # job id of this analyzer job
     job_id = int(sys.argv[1]) - 1
