@@ -4,7 +4,7 @@ import os
 import math
 from loudness_analyzer import extract
 
-NUM_JOBS = 500
+NUM_JOBS = 400
 BASE_FOLDER = '/datasets/MTG/audio/incoming/freesound/sounds/'
 FS_IDS = 'all_sound_ids.json'
 

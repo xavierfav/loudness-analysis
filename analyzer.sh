@@ -2,13 +2,13 @@
 
 #SBATCH -J analyzer
 #SBATCH -p short
-#SBATCH --workdir=/homedtic/xfavory/dev/loudness-analyzer/
-#SBATCH --array=1-500:1
+#SBATCH --workdir=/homedtic/xfavory/dev/loudness-analysis/
+#SBATCH --array=1-400:1
 #SBATCH --ntasks=1
 
 
-#SBATCH -o /homedtic/xfavory/dev/sound-clustering/out/%J.%u.%a.out # STDOUT
-#SBATCH -e /homedtic/xfavory/dev/sound-clustering/out/%J.%u.%a.err # STDERR
+#SBATCH -o /homedtic/xfavory/dev/loudness-analysis/out/%J.%u.%a.out # STDOUT
+#SBATCH -e /homedtic/xfavory/dev/loudness-analysis/out/%J.%u.%a.err # STDERR
 
 printf "[----]\n"
 printf "Starting execution of job $SLURM_JOB_ID from user $LOGNAME\n"
