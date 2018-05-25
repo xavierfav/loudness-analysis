@@ -8,7 +8,7 @@ import progress_bar
 import tempfile
 
 OUTPUT_DIR = "./analysis/"
-CMD_DIR = "/usr/local/bin/"
+CMD_DIR = "./"
 COMMAND = "essentia_streaming_extractor_music {} {}"
 
 DEVNULL = open('/dev/null', 'wb')
