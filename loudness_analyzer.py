@@ -9,7 +9,7 @@ import tempfile
 
 OUTPUT_DIR = "./analysis/"
 CMD_DIR = "./"
-COMMAND = "essentia_streaming_extractor_music {} {}"
+COMMAND = "essentia_streaming_extractor_music_rgfix {} {}"
 
 DEVNULL = open('/dev/null', 'wb')
 
