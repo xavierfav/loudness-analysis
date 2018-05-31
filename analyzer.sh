@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -J analyzer
-#SBATCH -p short
+#SBATCH -p high
 #SBATCH --workdir=/homedtic/xfavory/dev/loudness-analysis/
 #SBATCH --array=1-400:1
 #SBATCH --ntasks=1
