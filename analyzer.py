@@ -10,7 +10,7 @@ FS_IDS = 'failed_ids.json'
 
 
 def fs_id_to_folder(fs_id):
-    return str(int(fs_id/1000)) + '/'
+    return str(int(int(fs_id)/1000)) + '/'
 
 def fs_id_to_filename(fs_id):
     folder = fs_id_to_folder(fs_id)
