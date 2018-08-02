@@ -4,9 +4,9 @@ import os
 import math
 from loudness_analyzer import extract
 
-NUM_JOBS = 400
+NUM_JOBS = 100
 BASE_FOLDER = '/datasets/MTG/audio/incoming/freesound/sounds/'
-FS_IDS = 'all_sound_ids.json'
+FS_IDS = 'failed_ids.json'
 
 
 def fs_id_to_folder(fs_id):
@@ -38,4 +38,3 @@ if __name__ == '__main__':
     sys.stdout.flush()
 
     extract(filenames_to_process, job_id)
-    
